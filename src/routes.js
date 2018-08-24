@@ -18,7 +18,9 @@ class Routes extends Component {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <App>
+              <Route exact path="/dashboard" component={Dashboard} />
+            </App>
           </Switch>
         </div>
       </HashRouter>

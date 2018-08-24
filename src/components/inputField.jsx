@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField';
 
-
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
 
 class InputField extends Component {
 
@@ -9,16 +10,13 @@ class InputField extends Component {
 
         return (
             <TextField {...this.props.input}
-                error={this.props.meta.touched ? this.props.meta.error ? true : false : false}
-                //errorText={this.props.meta.touched ? this.props.meta.error : ''}
-                //errorStyle={{ lineHeight: 3, top: 55, fontSize: 11, position: 'absolute', bottom: 0 }}
+                error={this.props.meta.touched ? this.props.meta.invalid : false}
+                helperText={this.props.meta.touched ? this.props.meta.error : ''}
+                label={this.props.myPlaceHolder}
                 type={this.props.myType}
                 fullWidth={true}
-                disabled={this.props.disabled}
-                //floatingLabelFixed={true}
-                //floatingLabelText={this.props.myPlaceHolder}
-                label={this.props.myPlaceHolder}
                 margin="dense"
+                
             />
         )
     }
